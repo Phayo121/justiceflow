@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Case workspace | JusticeFlow</title>
+    <link rel="stylesheet" href="/workspace.css">
+    <script src="/workspace.js" defer></script>
+  </head>
+  <body>
+    <aside class="workspace-sidebar">
+      <a class="brand" href="/"><span class="brand-mark">J</span><span>Justice<span class="brand-light">Flow</span><small>ESWATINI</small></span></a>
+      <p class="sidebar-label">YOUR WORKSPACE</p>
+      <div class="role-badge" id="role-badge"></div>
+      <nav id="workspace-nav" aria-label="Workspace navigation"></nav>
+      <div class="sidebar-bottom"><span class="secure-mark">✓</span><div><strong>Restricted access</strong><small>Signed-in staff only</small></div></div>
+    </aside>
+    <main class="workspace-main">
+      <header class="workspace-topbar"><div><span class="topbar-context">JusticeFlow</span><span class="slash">/</span><strong id="workspace-title">Workspace</strong></div><div class="staff-menu"><span class="staff-avatar" id="staff-avatar"></span><span><strong id="staff-name"></strong><small id="staff-role"></small></span><button id="logout-button" type="button">Sign out</button></div></header>
+      <div class="workspace-content">
+        <div class="workspace-notice"><strong>Restricted records.</strong> Follow your agency's procedures and enter only information authorized for this system. This starter is not approved for real case data.</div>
+        <section class="workspace-heading"><div><p class="eyebrow" id="page-eyebrow"></p><h1 id="page-title"></h1><p id="page-description"></p></div><button id="new-case-button" class="button button-dark" type="button" hidden>＋ Register case</button></section>
+        <section class="stats-grid" id="stats-grid"></section>
+        <section class="admin-panel" id="admin-panel" hidden>
+          <div class="section-heading"><div><p class="eyebrow">ACCESS ADMINISTRATION</p><h2>Provision staff accounts</h2></div></div>
+          <p class="admin-intro">Create an account for an authorized staff member. Share their temporary password through an approved secure channel; they must change it at first sign-in.</p>
+          <form id="create-user-form" class="user-form">
+            <label><span>Username</span><input name="username" minlength="3" maxlength="32" pattern="[a-zA-Z0-9._-]+" required></label>
+            <label><span>Display name</span><input name="displayName" minlength="2" maxlength="80" required></label>
+            <label><span>Agency role</span><select name="role" required><option value="police">Police</option><option value="prosecution">Prosecution</option><option value="court">Court</option><option value="corrections">Corrections</option></select></label>
+            <label><span>Temporary password</span><input name="password" type="password" minlength="12" maxlength="128" autocomplete="new-password" required></label>
+            <button type="submit" class="button button-dark">Create account</button>
+          </form>
+          <p class="inline-message" id="admin-message" role="status" hidden></p>
+        </section>
+        <section class="cases-panel" id="cases-panel">
+          <div class="section-heading cases-heading"><div><p class="eyebrow">CASE REGISTER</p><h2 id="cases-title">Cases in your workflow</h2></div><div class="case-filters"><input id="case-search" type="search" placeholder="Search reference, station..." aria-label="Search accessible cases"><select id="stage-filter" aria-label="Filter by stage"><option value="">All stages</option><option>Police intake</option><option>Prosecutor review</option><option>Court proceedings</option><option>Correctional custody</option><option>Closed</option></select></div></div>
+          <div class="table-wrap"><table><thead><tr><th>REFERENCE</th><th>PERSON / ALIAS</th><th>OFFENCE CATEGORY</th><th>POLICE STATION</th><th>STAGE</th><th>LAST UPDATED</th><th></th></tr></thead><tbody id="case-table-body"></tbody></table><div class="empty-state" id="empty-state" hidden><strong>No cases found</strong><span>Adjust your search or stage filter.</span></div></div>
+        </section>
+        <p class="workspace-footer">Case actions are recorded with the signed-in account and a timestamp. This software does not determine legal outcomes.</p>
+      </div>
+    </main>
+    <div class="modal-backdrop" id="case-modal" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-heading"><div><p class="eyebrow">POLICE INTAKE</p><h2 id="modal-title">Register a case</h2></div><button type="button" data-close-modal aria-label="Close">×</button></div><p class="form-warning">Only enter information authorized for this system. This starter is not approved for real case data.</p><form id="new-case-form"><label>Person / case alias<input name="alias" minlength="2" maxlength="80" required></label><div class="two-fields"><label>Offence category<input name="offenceCategory" maxlength="100" required></label><label>Police station<input name="station" maxlength="100" required></label></div><label>Administrative intake note<textarea name="note" maxlength="1000" rows="3" required></textarea></label><div class="form-actions"><button type="button" class="button button-quiet" data-close-modal>Cancel</button><button type="submit" class="button button-dark">Create case</button></div></form></section></div>
+    <div class="modal-backdrop" id="detail-modal" hidden><section class="modal detail-modal" role="dialog" aria-modal="true" aria-labelledby="detail-title"><div class="modal-heading"><div><p class="eyebrow">RESTRICTED CASE RECORD</p><h2 id="detail-title"></h2></div><button type="button" data-close-modal aria-label="Close">×</button></div><div id="case-detail"></div></section></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

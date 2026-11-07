@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Staff sign in | JusticeFlow</title>
+    <link rel="stylesheet" href="/site.css">
+    <script src="/login.js" defer></script>
+  </head>
+  <body class="auth-page">
+    <a class="auth-back" href="/">← Back to JusticeFlow</a>
+    <main class="auth-card">
+      <a class="brand auth-brand" href="/"><span class="brand-mark">J</span><span>Justice<span class="brand-light">Flow</span><small>ESWATINI</small></span></a>
+      <p class="eyebrow" id="auth-eyebrow">AUTHORIZED STAFF</p>
+      <h1 id="auth-title">Sign in to your workspace</h1>
+      <p class="auth-description" id="auth-description">Use the account provisioned for you by your system administrator.</p>
+      <form id="login-form">
+        <label class="auth-field" id="username-field"><span>Username</span><input id="username" name="username" autocomplete="username" required maxlength="32" autofocus></label>
+        <label class="auth-field" id="password-field"><span id="password-label">Password</span><input id="password" name="password" type="password" autocomplete="current-password" required minlength="12" maxlength="128"></label>
+        <label class="auth-field" id="confirm-field" hidden><span>Confirm new password</span><input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" minlength="12" maxlength="128"></label>
+        <p class="auth-error" id="auth-error" role="alert" hidden></p>
+        <button class="button button-dark auth-submit" id="submit-button" type="submit">Sign in <span>→</span></button>
+      </form>
+      <p class="auth-footnote" id="auth-footnote"><span>!</span> This is a restricted workspace. Access is monitored. Do not share your credentials.</p>
+      <a class="auth-home-link" href="/">Return to public information</a>
+    </main>
+    <p class="auth-legal">Constitutional principles and legal sources <a href="/#rights">on the public landing page</a>.</p>
+  </body>
+</html>
