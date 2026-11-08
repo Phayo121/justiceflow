@@ -18,7 +18,7 @@ Create the first administrator in an interactive terminal:
 npm run create-admin
 ```
 
-The command prompts for a username, display name, and password (hidden while entered). Passwords must be at least 12 characters. It refuses to create another administrator unless `ALLOW_ADDITIONAL_ADMIN=true` is explicitly set.
+The command prompts for a username, display name, and password (Hidden while entered). Passwords must be at least 12 characters. It refuses to create another administrator unless `ALLOW_ADDITIONAL_ADMIN=true` is explicitly set.
 
 The administrator signs in at `/login` and creates Police, Prosecution, Court, and Corrections accounts. The admin supplies a unique username and temporary password to each staff member through an approved secure channel. Each staff member must change the temporary password before opening a workspace. There is deliberately no public signup and no built-in sample case data.
 
