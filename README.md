@@ -1,6 +1,6 @@
 # JusticeFlow — authenticated case administration starter
 
-This project is an independent, local full-stack starter for Eswatini justice workflow exploration. It has a public landing page and rights reference, sign-in for staff accounts, separate police/prosecution/court/corrections/admin workspaces, server-side role checks, and persistent SQLite case/activity records.
+This project is an independent, local full-stack starter for Eswatini justice workflow exploration. It will have a public landing page and rights reference, sign-in for staff accounts, separate police/prosecution/court/corrections/admin workspaces, server-side role checks, and persistent SQLite case/activity records.
 
 ## Run locally
 
